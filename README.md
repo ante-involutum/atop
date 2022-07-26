@@ -51,7 +51,7 @@ Atop 将自动化测试实践中搭建测试环境，执行测试、收集测试
 | [Files](https://github.com/ante-involutum/files) | 测试文件存储、分发
 | [Analysis](https://github.com/ante-involutum/analysis) | 测试数据过滤、整理、展示
 | [Tink](https://github.com/ante-involutum/tink) | runtime 控制模块，包括创建、销毁等
-| [Console](https://github.com/ante-involutum/console) | 前端页面.
+| [Console](https://github.com/ante-involutum/console) | 前端页面
 | [Chartrepo](https://github.com/ante-involutum/chartrepo) | Helm chart 仓库
 | [Demo](https://github.com/ante-involutum/demo) | Kubernetes 应用 demo，也作为被测系统
 | [Jmeter](https://github.com/ante-involutum/jmeter) | Jmeter runtime
