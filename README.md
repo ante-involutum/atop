@@ -1,4 +1,4 @@
-<div style="text-align: center"><img src="/img/atop_logo.png" height="120px">
+<div style="text-align: center"><img src="/img/atop_log.png" height="120px">
 <h2>任何语言, 任何框架, 任何测试</h2>
 </div>
 
@@ -33,9 +33,9 @@ Atop 将自动化测试实践中搭建测试环境，执行测试、收集测试
 * 测试数据展示
 * 分布式运行测试
 
-## Get Started using Dapr
+## 快速开始
 
-See our [Getting Started](https://docs.dapr.io/getting-started/) guide over in our docs.
+参考 [开始](https://github.com/ante-involutum/cli/blob/main/README.md) 指引.
 
 ### 联系我们
 
@@ -43,7 +43,7 @@ See our [Getting Started](https://docs.dapr.io/getting-started/) guide over in o
 |:----------|:------------|
 | 📧 Mail | [@lunz1207](lunz1207@gmail.com)
 
-## Repositories
+## 仓库
 
 | 仓库 | 描述 |
 |:-----|:------------|
