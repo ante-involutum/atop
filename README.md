@@ -8,13 +8,12 @@ atop 将自动化测试的最佳实践设计成开放、独立和模块化的方
 
 - 测试工程师能使用任何语言, 任何框架，开展自动化测试活动
 - 解决测试活动中的高可用, 弹性伸缩问题
-- 模块化运行测试
 - 构建完整的测试生态
 - 致力于测试效率提升
 
 ## 它是怎么工作的
 
-atop 提供基于容器的测试运行环境, 依托 Kubernetes 原生的高可用、弹性伸缩能力，将测试应用以job、deployment的形式运行，通过log以及httpservice收集测试数据并展示。
+atop 提供基于容器的测试运行环境, 依托 Kubernetes 原生的高可用、弹性伸缩能力，将测试应用以应用或者服务的形式运行，通过 logfile 或者 httpservice 收集测试数据并展示。
 
 ## 为什么选择 atop?
 
@@ -35,7 +34,7 @@ atop 将自动化测试实践中搭建测试环境，执行测试、收集测试
 
 ## 快速开始
 
-参考 [开始](https://github.com/ante-involutum/cli/blob/main/README.md) 指引.
+参考 [开始](https://github.com/ante-involutum/cli/blob/main/README.md) 指引
 
 ### 联系我们
 
