@@ -61,12 +61,11 @@ atop 将自动化测试实践中搭建测试环境，执行测试、收集测试
 
 ### 测试数据收集
 
-filebeat 会作为sidacar 容器随 Runtime 一起启动，实时读取测试logfile 并发送到kafka
+filebeat 会作为 sidacar 随 Runtime 一起启动，实时读取测试logfile 并发送到kafka
 
 ### 测试活动告警
 
-Analysis 服务，订阅kafka数据，一方面作为实时数据传输给前端，另一方面将经过处理后的数据存储到 prometheus.
-prometheus 告警规则匹配到告警数据则触发告警邮件
+Analysis 服务，订阅kafka数据，一方面作为实时数据传输给前端，另一方面将经过处理后的数据存储到 prometheus，并触发告警
 
 ## 测试应用
 
