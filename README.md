@@ -32,6 +32,46 @@ atop 将自动化测试实践中搭建测试环境，执行测试、收集测试
 - 测试数据展示
 - 分布式运行测试
 
+## 测试平台
+
+### 测试脚本分发
+
+脚本分发又三种形式
+
+- configMap
+- initContainers
+- PersistentVolume
+
+#### configMap
+
+文件挂载到 configMap ，使用于少量测试文件。需要维护configMap在测试活动中的生命周期，成本相对较低
+
+#### initContainers
+
+初始化容器在测试活动开始之前，将测试脚本从minio中下载，通过临时卷在容器之间共享，适用于大量的测试脚本、文件。测试活动完成后，自动销毁。几乎无维护成本
+
+##### PersistentVolume
+
+通过pv在不同节点、不同pod之间共享测试文件，需要一个文件服务来做文件生命周期的维护。
+
+### 测试脚本执行
+
+测试执行之前，将对应文件挂载到 pod 对应目录。同时将（测试数据、logfile）输出至指定目录。
+原则上只有文件的输入和结果的输出。最大限度上保证 Runtime 的纯净和低耦合。通过更改 docker 镜像、命令和环境变量实现测试场景、类型的参数化。
+
+### 测试数据收集
+
+filebeat 会作为sidacar 容器随 Runtime 一起启动，实时读取测试logfile 并发送到kafka
+
+### 测试活动告警
+
+Analysis 服务，订阅kafka数据，一方面作为实时数据传输给前端，另一方面将经过处理后的数据存储到 prometheus.
+prometheus 告警规则匹配到告警数据则触发告警邮件
+
+## 测试应用
+
+测试应用、框架仅仅只需要生成规范的、结构化的测试数据、文件。即可接入平台
+
 ## 快速开始
 
 参考 [开始](https://github.com/ante-involutum/cli/blob/main/README.md) 指引
