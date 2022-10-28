@@ -3,6 +3,7 @@
 Automated Testing Open Platform, 自动化测试开放平台
 
 ![atop overview](./img/overview.png)
+![aomaker overview](./img/aomaker.png)
 
 ## 目标
 
@@ -21,8 +22,6 @@ Automated Testing Open Platform, 自动化测试开放平台
 atop 将搭建测试环境，执行测试、收集测试数据、发送告警等活动以模块化的形式自动化独立运行，尽可能的提高测试活动的效率
 
 第三方的测试应用或者框架只需要做一定程度的改造即可接入atop，测试活动更容易上云平台
-
-![aomaker overview](./img/aomaker.png)
 
 ## 功能
 

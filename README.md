@@ -3,6 +3,7 @@
 Automated Testing Open Platform
 
 ![Atop overview](./img/overview.png)
+![aomaker overview](./img/aomaker.png)
 
 ## Goals
 
@@ -17,8 +18,6 @@ Relying on the native capabilities of Kubernetes, atop provides the management c
 ## Why Atop?
 
 It is very difficult to write highly available and distributed test code, Atop will provide this capability natively; Atop will build a test environment, execute tests, collect test data, send alarms and other activities in a modular form to automate and independently run, as far as possible It can improve the efficiency of testing activities; third-party testing applications or frameworks only need to do a certain degree of transformation to access Atop, and testing activities are easier to access to the cloud platform.
-
-![aomaker overview](./img/aomaker.png)
 
 ## Feature
 
