@@ -6,7 +6,7 @@ metadata:
   name: {{ .Release.Name }}-console
 spec:
   http:
-    - name: rule-console
+    - name: console
       match:
         hosts:
           - {{ .Values.hosts }}
