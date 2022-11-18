@@ -1,5 +1,8 @@
 hosts: atop.test
-dockerconfigjson: ""
+
+atop:
+  private: false
+  dockerconfigjson: "your dockerconfigjson"
 
 auth:
   registry: docker.io

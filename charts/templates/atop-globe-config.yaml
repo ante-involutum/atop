@@ -16,11 +16,13 @@ data:
 
 
 # docker Secret for private hub
+{{- if .Values.atop.private }}
 ---
 apiVersion: v1
 kind: Secret
 metadata:
     name: regcred
 data:
-    .dockerconfigjson: {{ .Values.dockerconfigjson }}
+    .dockerconfigjson: {{ .Values.atop.dockerconfigjson }}
 type: kubernetes.io/dockerconfigjson
+{{- end }}
