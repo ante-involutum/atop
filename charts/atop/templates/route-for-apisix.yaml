@@ -1,0 +1,292 @@
+## -----------------------------------------------console--------------------------------------
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-console
+spec:
+  http:
+    - name: rule-console
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /*
+      backends:
+        - serviceName: {{ .Release.Name }}-console
+          servicePort: 80
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixUpstream
+metadata:
+  name: {{ .Release.Name }}-console
+spec:
+  scheme: http
+  loadbalancer:
+    type: roundrobin
+
+
+## -----------------------------------------------demo--------------------------------------
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-demo
+spec:
+  http:
+    - name: demo
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /demo/*
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          - HEAD
+          - OPTIONS
+          - CONNECT
+          - TRACE
+      plugins:
+        - name: forward-auth
+          enable: true
+          config:
+            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
+            disable: false
+            request_method: GET
+            upstream_headers:
+              - X-User-ID
+            request_headers:
+              - Authorization
+      backends:
+        - serviceName: {{ .Release.Name }}-demo
+          servicePort: 8002
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixUpstream
+metadata:
+  name: {{ .Release.Name }}-demo
+spec:
+  scheme: http
+  loadbalancer:
+    type: roundrobin
+
+## -----------------------------------------------tink--------------------------------------
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-tink
+spec:
+  http:
+    - name: tink
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /tink/*
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          - HEAD
+          - OPTIONS
+          - CONNECT
+          - TRACE
+      plugins:
+        - name: forward-auth
+          enable: true
+          config:
+            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
+            disable: false
+            request_method: GET
+            upstream_headers:
+              - X-User-ID
+            request_headers:
+              - Authorization
+      backends:
+        - serviceName: {{ .Release.Name }}-tink
+          servicePort: 8003
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixUpstream
+metadata:
+  name: {{ .Release.Name }}-tink
+spec:
+  scheme: http
+  loadbalancer:
+    type: roundrobin
+
+## -----------------------------------------------files--------------------------------------
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-controller
+spec:
+  http:
+    - name: controller
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /files/*
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          - HEAD
+          - OPTIONS
+          - CONNECT
+          - TRACE
+      plugins:
+        - name: forward-auth
+          enable: true
+          config:
+            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
+            disable: false
+            request_method: GET
+            upstream_headers:
+              - X-User-ID
+            request_headers:
+              - Authorization
+      backends:
+        - serviceName: {{ .Release.Name }}-files
+          servicePort: 8004
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-files
+spec:
+  http:
+    - name: files
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /share/*
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          - HEAD
+          - OPTIONS
+          - CONNECT
+          - TRACE
+      plugins:
+        - name: forward-auth
+          enable: false
+          config:
+            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
+            disable: false
+            request_method: GET
+            upstream_headers:
+              - X-User-ID
+            request_headers:
+              - Authorization
+      backends:
+        - serviceName: {{ .Release.Name }}-files
+          servicePort: 8006
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixUpstream
+metadata:
+  name: {{ .Release.Name }}-files
+spec:
+  scheme: http
+  loadbalancer:
+    type: roundrobin
+
+## -----------------------------------------------analysis--------------------------------------
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: {{ .Release.Name }}-analysis
+spec:
+  http:
+    - name: analysis
+      match:
+        hosts:
+          - {{ .Values.hosts }}
+        paths:
+          - /analysis/*
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - PATCH
+          - HEAD
+          - OPTIONS
+          - CONNECT
+          - TRACE
+      plugins:
+        - name: forward-auth
+          enable: false
+          config:
+            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
+            disable: false
+            request_method: GET
+            upstream_headers:
+              - X-User-ID
+            request_headers:
+              - Authorization
+      websocket: true
+      backends:
+        - serviceName: {{ .Release.Name }}-analysis
+          servicePort: 8005
+
+---
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixUpstream
+metadata:
+  name: {{ .Release.Name }}-analysis
+spec:
+  scheme: http
+  loadbalancer:
+    type: roundrobin
+
+## -----------------------------------------------插件配置--------------------------------------
+# ---
+# apiVersion: apisix.apache.org/v2beta3
+# kind: ApisixPluginConfig
+# metadata:
+#   name: plugins-for-atop
+# spec:
+#   plugins:
+#     - name: forward-auth
+#       enable: true
+#       config:
+#         uri: http://auth.{{ .Release.Namespace }}:8001/auth/authorization/
+#         disable: false
+#         request_method: GET
+#         upstream_headers:
+#           - X-User-ID
+#         request_headers:
+#           - Authorization
+#     # - name: forward-auth
+#     #   enable: true
+#     #   config:
+#     #     uri: http://auth.{{ .Release.Namespace }}:8001/auth/password/
+#     #     disable: false
+#     #     request_method: POST
+
+## --------------------------------------------test------------------------------------------
+# curl -i -X GET http://atop.test:31695/demo/ -H 'Authorization: admin'
+# curl -i -H "Content-type: application/json" -X GET -d '{"name": "admin","password": "admin"}' http://atop.test:31695/demo/

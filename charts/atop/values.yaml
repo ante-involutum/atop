@@ -1,0 +1,49 @@
+hosts: atop.test
+dockerconfigjson: ""
+
+auth:
+  registry: docker.io
+  repository: mx2542
+  image: auth:latest
+  private: false
+
+demo:
+  registry: docker.io
+  repository: mx2542
+  image: demo:latest
+  private: false
+
+files:
+  registry: docker.io
+  repository: mx2542
+  image: files:latest
+  private: false
+
+tink:
+  registry: docker.io
+  repository: mx2542
+  image: tink:latest
+  private: false
+
+analysis:
+  registry: docker.io
+  repository: mx2542
+  image: analysis:latest
+  private: false
+
+console:
+  registry: docker.io
+  repository: mx2542
+  image: console:latest
+  private: false
+
+minio:
+  auth:
+    rootUser: admin
+    rootPassword: changeme
+  defaultBuckets: "case,result,test"
+
+apisix:
+  gateway:
+    http:
+      nodePort: 31695

@@ -1,0 +1,26 @@
+# atop cnfig
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: atop-globe-config
+data:
+  host: {{ .Values.hosts }}
+  port: "{{ .Values.apisix.gateway.http.nodePort }}"
+  minio_host: "{{ .Release.Name }}-minio.{{ .Release.Namespace }}:9000"
+  minio_access_key: {{ .Values.minio.auth.rootUser }}
+  minio_secret_key: {{ .Values.minio.auth.rootPassword }}
+  elasticsearch_service_hosts: "http://{{ .Release.Name }}-elasticsearch-master-headless.{{ .Release.Namespace }}:9200"
+  files_service_hosts: "{{ .Release.Name }}-files.{{ .Release.Namespace }}:8004"
+
+
+
+# docker Secret for private hub
+---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: regcred
+data:
+    .dockerconfigjson: {{ .Values.dockerconfigjson }}
+type: kubernetes.io/dockerconfigjson
