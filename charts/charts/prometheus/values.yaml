@@ -1677,10 +1677,6 @@ serverFiles:
             action: keep
             regex: default;kubernetes;https
 
-      - job_name: 'kubernetes-services'
-        kubernetes_sd_configs:
-        - role: service
-
       - job_name: 'kubernetes-nodes'
 
         # Default to scraping over https. If required, just disable this or change to
