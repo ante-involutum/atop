@@ -10,7 +10,7 @@ metadata:
   {{- end }}
   labels:
     {{- include "prometheus.alertmanager.labels" . | nindent 4 }}
-  name: {{ template "prometheus.alertmanager.fullname" . }}
+  name: data-{{ template "prometheus.alertmanager.fullname" . }}
 {{ include "prometheus.namespace" . | indent 2 }}
 spec:
   accessModes:
