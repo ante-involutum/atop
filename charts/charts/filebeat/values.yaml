@@ -49,12 +49,12 @@ daemonset:
             lang: javascript
             source: >
               function process(event) {
-                  var uuid = event.Get('kubernetes').pod.uid;
                   var name = event.Get('kubernetes').pod.name;
                   var container_name = event.Get('kubernetes').container.name;
-                  event.Put('pod.id',uuid);
+                  var labels_uid = event.Get('kubernetes').labels.uid;
                   event.Put('pod.name',name);
                   event.Put('container.name',container_name);
+                  event.Put('labels.uid',labels_uid);
                   event.Delete("kubernetes");
                   event.Delete("agent");
                   event.Delete("host");
