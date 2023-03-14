@@ -175,6 +175,7 @@ spec:
       match:
         hosts:
           - {{ .Values.hosts }}
+          - qa.yunify.com
         paths:
           - /share/*
         methods:
