@@ -50,3 +50,6 @@ apisix:
   gateway:
     http:
       nodePort: 31695
+
+filebeat:
+  dockerRootDir: /var/lib/docker
