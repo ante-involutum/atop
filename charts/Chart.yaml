@@ -31,7 +31,7 @@ dependencies:
     version: "1.0.1"
     repository: "https://no8ge.github.io/chartrepo"
   - name: files
-    version: "1.0.1"
+    version: "1.0.2"
     repository: "https://no8ge.github.io/chartrepo"
   - name: tink
     version: "1.0.2"
