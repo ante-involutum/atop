@@ -42,9 +42,6 @@ daemonset:
             matchers:
             - logs_path:
                 logs_path: "/var/log/containers/"
-        - drop_fields:
-            fields: ["container", "host", "agent", "ecs", "log", "stream", "input"]
-            ignore_missing: false
         - script:
             lang: javascript
             source: >
@@ -55,10 +52,6 @@ daemonset:
                   event.Put('pod.name',name);
                   event.Put('container.name',container_name);
                   event.Put('labels.uid',labels_uid);
-                  event.Delete("kubernetes");
-                  event.Delete("agent");
-                  event.Delete("host");
-                  event.Delete("ecs");
               }
 
       output.elasticsearch:
