@@ -133,7 +133,7 @@ gateway:
     enabled: true
     servicePort: 80
     containerPort: 9080
-    nodePort: 31695
+    nodePort: 31690
   tls:
     enabled: false
     servicePort: 443
@@ -401,10 +401,10 @@ etcd:
   service:
     port: 2379
 
-  replicaCount: 1
+  replicaCount: 3
 
 dashboard:
-  enabled: false
+  enabled: true
 
 ingress-controller:
   enabled: true

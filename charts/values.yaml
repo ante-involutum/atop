@@ -1,4 +1,5 @@
 hosts: atop.test
+env: stable
 
 atop:
   private: false
@@ -49,7 +50,7 @@ minio:
 apisix:
   gateway:
     http:
-      nodePort: 31695
+      nodePort: 31690
 
 filebeat:
   dockerRootDir: /var/lib/docker
