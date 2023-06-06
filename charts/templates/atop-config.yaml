@@ -6,6 +6,7 @@ metadata:
   name: atop-globe-config
 data:
   host: {{ .Values.hosts }}
+  env: {{ .Values.env }}
   port: "{{ .Values.apisix.gateway.http.nodePort }}"
   minio_host: "{{ .Release.Name }}-minio.{{ .Release.Namespace }}:9000"
   minio_access_key: {{ .Values.minio.auth.rootUser }}
