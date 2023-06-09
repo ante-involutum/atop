@@ -110,7 +110,7 @@ auth:
 ## e.g:
 ## defaultBuckets: "my-bucket, my-second-bucket"
 ##
-defaultBuckets: "case,result"
+defaultBuckets: "case,result,test,templates,report"
 ## @param disableWebUI Disable MinIO&reg; Web UI
 ## ref: https://github.com/minio/minio/tree/master/docs/config/#browser
 ##
