@@ -37,6 +37,6 @@ jobs:
         run: |
           helm upgrade --install apisix atop/apisix --create-namespace --namespace apisix --set gateway.http.nodePort=31690 --set dashboard.enabled=true --set ingress-controller.enabled=true --set ingress-controller.config.apisix.serviceNamespace=apisix
 
-      - name: install atop
-        run: |
-          helm install test atop/atop
+      # - name: install atop
+      #   run: |
+      #     helm install test atop/atop
