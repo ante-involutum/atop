@@ -27,6 +27,8 @@ clusterDeprecationIndexing: "false"
 esConfig:
  elasticsearch.yml: |
      ingest.geoip.downloader.enabled: false
+     cluster.routing.allocation.disk.watermark.low: 90%
+     cluster.routing.allocation.disk.watermark.high: 95%
 #  log4j2.properties: |
 #    key = value
 
