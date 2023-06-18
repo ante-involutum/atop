@@ -28,10 +28,6 @@ daemonset:
   # such as filebeat.yml for daemonset
   filebeatConfig:
     filebeat.yml: |
-      setup.ilm.policy_name: "atop"
-      setup.ilm.rollover_alias: "atop"
-      setup.ilm.pattern: "{now/d}"
-
       filebeat.inputs:
       - type: container
         paths:
