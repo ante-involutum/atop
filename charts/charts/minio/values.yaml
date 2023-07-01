@@ -876,7 +876,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for MinIO&reg; data volume
   ##
-  size: 30Gi
+  size: 20Gi
   ## @param persistence.annotations Annotations for the PVC
   ##
   annotations: {}
