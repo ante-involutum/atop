@@ -109,10 +109,10 @@ spec:
 apiVersion: apisix.apache.org/v2beta3
 kind: ApisixRoute
 metadata:
-  name: "{{ .Release.Name }}-controller"
+  name: "{{ .Release.Name }}-files"
 spec:
   http:
-    - name: controller
+    - name: files
       match:
         paths:
           - /{{ .Values.env }}/files/*
@@ -151,10 +151,10 @@ spec:
 apiVersion: apisix.apache.org/v2beta3
 kind: ApisixRoute
 metadata:
-  name: "{{ .Release.Name }}-files"
+  name: "{{ .Release.Name }}-reports"
 spec:
   http:
-    - name: files
+    - name: reports
       match:
         paths:
           - /{{ .Values.env }}/share/*
@@ -183,8 +183,8 @@ spec:
           enable: true
           config:
             regex_uri:
-              - /{{ .Values.env }}/share/
-              - /share/
+              - ^/{{ .Values.env }}/share/(.*)
+              - /share/$1
       backends:
         - serviceName: "{{ .Release.Name }}-files"
           servicePort: 8006
