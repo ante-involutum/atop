@@ -12,8 +12,7 @@ data:
   minio_access_key: {{ .Values.minio.auth.rootUser }}
   minio_secret_key: {{ .Values.minio.auth.rootPassword }}
   elasticsearch_service_hosts: "http://{{ .Release.Name }}-elasticsearch-master-headless.{{ .Release.Namespace }}:9200"
-  # files_service_hosts: "{{ .Release.Name }}-files.{{ .Release.Namespace }}:8004"
-  files_service_hosts: "{{ .Values.hosts }}:{{ .Values.port }}/{{ .Values.env }}"
+  files_service_hosts: "{{ .Release.Name }}-files.{{ .Release.Namespace }}:8004"
 
 
 ---
