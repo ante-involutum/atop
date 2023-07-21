@@ -2,14 +2,8 @@ name: main
 on:
   push:
     branches:
-      - master
       - main
-      - release-*
-  pull_request:
-    branches:
-      - master
-      - main
-      - release-*
+
 jobs:
   test:
     name: E2E Test
