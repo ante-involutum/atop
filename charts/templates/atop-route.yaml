@@ -90,6 +90,7 @@ spec:
             regex_uri:
               - /{{ .Values.env }}/tink/
               - /tink/
+      websocket: true    
       backends:
         - serviceName: "{{ .Release.Name }}-tink"
           servicePort: 8003
@@ -143,6 +144,7 @@ spec:
             regex_uri:
               - /{{ .Values.env }}/files/
               - /files/
+      websocket: true              
       backends:
         - serviceName: "{{ .Release.Name }}-files"
           servicePort: 8004
