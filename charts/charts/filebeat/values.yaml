@@ -254,3 +254,6 @@ resources: {}
 secretMounts: []
 tolerations: []
 labels: {}
+
+# docker patch
+dockerRootDir: /var/lib/docker
