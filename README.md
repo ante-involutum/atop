@@ -162,36 +162,39 @@ tests/test_demo.py::TestDemo::test_anythings PASSED
 
 ```shell
 # request
-curl -X GET -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/tink/v1.1/pod -d '{"type":"pytest","name":"test-1","uid":"091143e5-464e-4704-8438-04ecc98f4b1a"}'
+curl -X GET -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/tink/v1.1/pod -d '{"type":"pytest","name":"test-1","uid":"091143e5-464e-4704-8438-04ecc98f4b1a"}'  
 
 # response
-{"api_version":"v1","kind":"Pod","status":{"conditions":[{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:25+00:00","message":null,"reason":"PodCompleted","status":"True","type":"Initialized"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:33+00:00","message":null,"reason":"PodCompleted","status":"False","type":"Ready"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:33+00:00","message":null,"reason":"PodCompleted","status":"False","type":"ContainersReady"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:25+00:00","message":null,"reason":null,"status":"True","type":"PodScheduled"}],"container_statuses":[{"container_id":"containerd://0116a917fcd3687aa5f96824580976f9a53038ad6db20a0c870b5684f6ae3427","image":"docker.io/mx2542/demo:1.0.0","image_id":"docker.io/mx2542/demo@sha256:b9e758834810da6dfcdd971a35f9231b1d6dbbcee39b5c07df9653e24692e7d8","last_state":{"running":null,"terminated":null,"waiting":null},"name":"pytest","ready":false,"restart_count":0,"started":false,"state":{"running":null,"terminated":{"container_id":"containerd://0116a917fcd3687aa5f96824580976f9a53038ad6db20a0c870b5684f6ae3427","exit_code":0,"finished_at":"2023-08-18T06:17:32+00:00","message":null,"reason":"Completed","signal":null,"started_at":"2023-08-18T06:17:31+00:00"},"waiting":null}}],"ephemeral_container_statuses":null,"host_ip":"192.168.228.2","init_container_statuses":null,"message":null,"nominated_node_name":null,"phase":"Succeeded","pod_ip":"10.42.0.84","pod_i_ps":[{"ip":"10.42.0.84"}],"qos_class":"BestEffort","reason":null,"start_time":"2023-08-18T06:17:25+00:00"}}
+{"api_version":"v1","kind":"Pod","status":{"conditions":[{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:25+00:00","message":null,"reason":"PodCompleted","status":"True","type":"Initialized"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:33+00:00","message":null,"reason":"PodCompleted","status":"False","type":"Ready"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:33+00:00","message":null,"reason":"PodCompleted","status":"False","type":"ContainersReady"},{"last_probe_time":null,"last_transition_time":"2023-08-18T06:17:25+00:00","message":null,"reason":null,"status":"True","type":"PodScheduled"}],"container_statuses":[{"container_id":"containerd://0116a917fcd3687aa5f96824580976f9a53038ad6db20a0c870b5684f6ae3427","image":"docker.io/mx2542/demo:1.0.0","image_id":"docker.io/mx2542/demo@sha256:b9e758834810da6dfcdd971a35f9231b1d6dbbcee39b5c07df9653e24692e7d8","last_state":{"running":null,"terminated":null,"waiting":null},"name":"pytest","ready":false,"restart_count":0,"started":false,"state":{"running":null,"terminated":{"container_id":"containerd://0116a917fcd3687aa5f96824580976f9a53038ad6db20a0c870b5684f6ae3427","exit_code":0,"finished_at":"2023-08-18T06:17:32+00:00","message":null,"reason":"Completed","signal":null,"started_at":"2023-08-18T06:17:31+00:00"},"waiting":null}}],"ephemeral_container_statuses":null,"host_ip":"192.168.228.2","init_container_statuses":null,"message":null,"nominated_node_name":null,"phase":"Succeeded","pod_ip":"10.42.0.84","pod_i_ps":[{"ip":"10.42.0.84"}],"qos_class":"BestEffort","reason":null,"start_time":"2023-08-18T06:17:25+00:00"}}  
 ```
 
+通过 atop 接口查看 Pod 日志
+
 ```shell
-# 通过 atop 接口查看 Pod 日志
 # todo: fix k3d 兼容性
 # request
-curl -X POST -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/analysis/raw -d '{"index":"logs","key_words":{"kubernetes.labels.uid":"091143e5-464e-4704-8438-04ecc98f4b1a"},"from_":0,"size":200}'
+curl -X POST -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/analysis/raw -d '{"index":"logs","key_words":{"kubernetes.labels.uid":"091143e5-464e-4704-8438-04ecc98f4b1a"},"from_":0,"size":200}'  
 ```
 
 查看测试报告
 
 ```shell
 # request
-curl -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/files/v1.1/report -d '{"type":"pytest","uid":"091143e5-464e-4704-8438-04ecc98f4b1a","path":"/demo/report"}'
+curl -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/files/v1.1/report -d '{"type":"pytest","uid":"091143e5-464e-4704-8438-04ecc98f4b1a","path":"/demo/report"}'  
 
 # response
-{"url":"http://127.0.0.1:31690/stable/share/pytest-091143e5-464e-4704-8438-04ecc98f4b1a/demo/report/report.html","status":"completed"}
-``
-浏览器打开 http://127.0.0.1:31690/stable/share/pytest-091143e5-464e-4704-8438-04ecc98f4b1a/demo/report/report.html
+{"url":"http://127.0.0.1:31690/stable/share/pytest-091143e5-464e-4704-8438-04ecc98f4b1a/demo/report/report.html","status":"completed"}  
+
+# 浏览器打开 
+open http://127.0.0.1:31690/stable/share/pytest-091143e5-464e-4704-8438-04ecc98f4b1a/demo/report/report.html  
+```
+
 ![pytest overview](./img/pytest.png)
 
 ### 第三方框架接入
-  - 将测试代码构建为一个 Docker 镜像, 保证能正常运行
-  - 在测试代码中实现一个 metrics 接口(或者 metrics.log 文件), atop 平台会通过filebeat 或者 prometheus 实时采集 metrics 入库 
 
-#### 构建镜像
+- 将测试代码构建为一个 Docker 镜像, 保证能正常运行
+- 在测试代码中实现一个 metrics 接口(或者 metrics.log 文件), atop 平台会通过 filebeat 或者 prometheus 实时采集 metrics 入库
 
 ## 仓库
 
