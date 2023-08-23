@@ -180,7 +180,7 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: admin" http:
 
 ```shell
 # request
-curl -H "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/files/v1.1/report -d '{"type":"pytest","uid":"091143e5-464e-4704-8438-04ecc98f4b1a","path":"/demo/report"}'  
+curl -H -X GET "Content-Type: application/json" -H "Authorization: admin" http://127.0.0.1:31690/stable/files/v1.1/report -d '{"type":"pytest","uid":"091143e5-464e-4704-8438-04ecc98f4b1a","path":"/demo/report"}'  
 
 # response
 {"url":"http://127.0.0.1:31690/stable/share/pytest-091143e5-464e-4704-8438-04ecc98f4b1a/demo/report/report.html","status":"completed"}  
