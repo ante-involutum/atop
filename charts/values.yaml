@@ -5,5 +5,3 @@ dockerconfigjson: your dockerconfigjson
 filebeat:
   dockerRootDir: /var/lib/docker
   # dockerRootDir: /data/dockerimages
-files:
-  nfs: false
