@@ -7,12 +7,12 @@ dependencies:
   version: 1.0.1
 - name: files
   repository: https://no8ge.github.io/chartrepo
-  version: 1.0.7
+  version: 1.0.8
 - name: tink
   repository: https://no8ge.github.io/chartrepo
-  version: 1.0.5
+  version: 1.0.6
 - name: analysis
   repository: https://no8ge.github.io/chartrepo
   version: 1.0.2
-digest: sha256:4fe0ac7eee68ef51a3b25273cd7be2fcd28be01868a54a8e382447585f7ab758
-generated: "2023-09-14T09:16:28.803017+08:00"
+digest: sha256:622db1b2ee0479216abbb60bd57f4cbc61a39e4565d396da9242a14dd9843490
+generated: "2023-11-17T16:34:48.464875+08:00"
