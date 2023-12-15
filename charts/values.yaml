@@ -1,7 +1,0 @@
-hosts: 172.16.60.10
-env: stable
-port: 31690
-dockerconfigjson: your dockerconfigjson
-filebeat:
-  dockerRootDir: /var/lib/docker
-  # dockerRootDir: /data/dockerimages
