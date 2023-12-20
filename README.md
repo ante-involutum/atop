@@ -1,6 +1,8 @@
 # atop
 
-Automated Testing Open Platform 自动化测试开放平台, 让自动化测试更加简单。
+Automated Testing Open Platform
+
+自动化测试开放平台, 让自动化测试更加简单。
 
 ## 特点
 
