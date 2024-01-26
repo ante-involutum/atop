@@ -463,6 +463,7 @@ open http://192.168.228.5:31690/files/share/result/278a0e0f-08a4-47b1-a4a8-582b2
 | [Demo](https://github.com/no8ge/demo) | 测试用 demo
 | [Files](https://github.com/no8ge/files) | 文件报告处理
 | [Tink](https://github.com/no8ge/tink) | 测试执行控制模块
+| [Notify](https://github.com/no8ge/notify) | 消息通知推送服务
 | [Plugins](https://github.com/no8ge/Plugins) | 构建测试插件
 
 ### 联系我们
