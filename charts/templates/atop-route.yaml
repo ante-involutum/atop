@@ -1,6 +1,6 @@
 ## -----------------------------------------------demo--------------------------------------
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixRoute
 metadata:
   name: "{{ .Release.Name }}-demo"
@@ -42,7 +42,7 @@ spec:
           servicePort: 8002
 
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixUpstream
 metadata:
   name: "{{ .Release.Name }}-demo"
@@ -53,7 +53,7 @@ spec:
 
 ## -----------------------------------------------tink--------------------------------------
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixRoute
 metadata:
   name: "{{ .Release.Name }}-tink"
@@ -96,7 +96,7 @@ spec:
           servicePort: 8003
 
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixUpstream
 metadata:
   name: "{{ .Release.Name }}-tink"
@@ -107,7 +107,7 @@ spec:
 
 ## -----------------------------------------------files--------------------------------------
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixRoute
 metadata:
   name: "{{ .Release.Name }}-files"
@@ -150,7 +150,7 @@ spec:
           servicePort: 8004
 
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixRoute
 metadata:
   name: "{{ .Release.Name }}-reports"
@@ -192,7 +192,7 @@ spec:
           servicePort: 8004
 
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixUpstream
 metadata:
   name: "{{ .Release.Name }}-files"
@@ -203,7 +203,7 @@ spec:
 
 ## -----------------------------------------------analysis--------------------------------------
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixRoute
 metadata:
   name: "{{ .Release.Name }}-analysis"
@@ -246,7 +246,7 @@ spec:
           servicePort: 8005
 
 ---
-apiVersion: apisix.apache.org/v2beta3
+apiVersion: apisix.apache.org/v2
 kind: ApisixUpstream
 metadata:
   name: "{{ .Release.Name }}-analysis"
@@ -256,7 +256,7 @@ spec:
     type: roundrobin
 ## -----------------------------------------------console--------------------------------------
 # ---
-# apiVersion: apisix.apache.org/v2beta3
+# apiVersion: apisix.apache.org/v2
 # kind: ApisixRoute
 # metadata:
 #   name: "{{ .Release.Name }}-console"
@@ -281,7 +281,7 @@ spec:
 #               - /
 
 # ---
-# apiVersion: apisix.apache.org/v2beta3
+# apiVersion: apisix.apache.org/v2
 # kind: ApisixUpstream
 # metadata:
 #   name: "{{ .Release.Name }}-console"
