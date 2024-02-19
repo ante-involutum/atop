@@ -141,16 +141,6 @@ spec:
           - CONNECT
           - TRACE
       plugins:
-        - name: forward-auth
-          enable: false
-          config:
-            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
-            disable: false
-            request_method: GET
-            upstream_headers:
-              - X-User-ID
-            request_headers:
-              - Authorization
         - name: proxy-rewrite
           enable: true
           config:
@@ -194,16 +184,6 @@ spec:
           - CONNECT
           - TRACE
       plugins:
-        - name: forward-auth
-          enable: false
-          config:
-            uri: http://{{ .Release.Name }}-auth.{{ .Release.Namespace }}:8001/auth/authorization/
-            disable: false
-            request_method: GET
-            upstream_headers:
-              - X-User-ID
-            request_headers:
-              - Authorization
         - name: proxy-rewrite
           enable: true
           config:

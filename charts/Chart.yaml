@@ -24,12 +24,12 @@ version: 1.0.9
 appVersion: "0.1.2"
 
 dependencies:
-  - name: auth
-    version: "1.0.1"
-    repository: "https://no8ge.github.io/chartrepo"
-  - name: demo
-    version: "1.0.1"
-    repository: "https://no8ge.github.io/chartrepo"
+  # - name: auth
+  #   version: "1.0.1"
+  #   repository: "https://no8ge.github.io/chartrepo"
+  # - name: demo
+  #   version: "1.0.1"
+  #   repository: "https://no8ge.github.io/chartrepo"
   - name: files
     version: "1.0.8"
     repository: "https://no8ge.github.io/chartrepo"
