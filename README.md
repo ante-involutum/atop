@@ -233,12 +233,12 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: admin" http:
 创建一个测试
 | 参数  | 说明        |
 |:----------|:------------|
-| release | 测试唯一标识
-| chart | 测试插件类型，平台封装了三种类型：jmeter、locust、pytest
-| version | 测试插件版本
-| repo | 仓库名称，存放测试插件
-| namespace | 集群命名空间
-| value | 测试参数化，通过调整 command 等字段达到执行不同测试行为的目的
+| release | 测试唯一标识|
+| chart | 测试插件类型，平台封装了三种类型：jmeter、locust、pytest|
+| version | 测试插件版本|
+| repo | 仓库名称，存放测试插件|
+| namespace | 集群命名空间|
+| value | 测试参数化，通过调整 command 等字段达到执行不同测试行为的目的|
 
 ```shell
 # 创建自动化测试 Pod
@@ -456,18 +456,18 @@ open http://192.168.228.5:31690/files/share/result/278a0e0f-08a4-47b1-a4a8-582b2
 
 | 仓库 | 描述 |
 |:-----|:------------|
-| [Atop](https://github.com/no8ge/atop) | 主仓库
-| [Analysis](https://github.com/no8ge/analysis) | 测试数据分析处理
-| [Console](https://github.com/no8ge/console) | 平台前端
-| [Chartrepo](https://github.com/no8ge/chartrepo) | Helm chart 仓库
-| [Demo](https://github.com/no8ge/demo) | 测试用 demo
-| [Files](https://github.com/no8ge/files) | 文件报告处理
-| [Tink](https://github.com/no8ge/tink) | 测试执行控制模块
-| [Notify](https://github.com/no8ge/notify) | 消息通知推送服务
-| [Plugins](https://github.com/no8ge/Plugins) | 构建测试插件
+| [Atop](https://github.com/no8ge/atop) | 主仓库|
+| [Analysis](https://github.com/no8ge/analysis) | 测试数据分析处理|
+| [Console](https://github.com/no8ge/console) | 平台前端|
+| [Chartrepo](https://github.com/no8ge/chartrepo) | Helm chart 仓库|
+| [Demo](https://github.com/no8ge/demo) | 测试用 demo|
+| [Files](https://github.com/no8ge/files) | 文件报告处理|
+| [Tink](https://github.com/no8ge/tink) | 测试执行控制模块|
+| [Notify](https://github.com/no8ge/notify) | 消息通知推送服务|
+| [Plugins](https://github.com/no8ge/Plugins) | 构建测试插件|
 
 ### 联系我们
 
 | 平台  | 链接        |
 |:----------|:------------|
-| 📧 Mail | <lunz1207@gmail.com>
+| 📧 Mail | <lunz1207@gmail.com>|
