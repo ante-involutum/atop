@@ -1,0 +1,8 @@
+host: 172.16.60.10
+env: dev
+port: 31690
+dockerconfigjson: eyJhdXRocyI6eyJkb2NrZXJodWIucWluZ2Nsb3VkLmNvbSI6eyJhdXRoIjoiY1dsdVozUmxjM1JBZVhWdWFXWjVMbU52YlRwNmFIVTRPR3BwWlNFPSJ9LCJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsiYXV0aCI6ImJYZ3lOVFF5T2pJMU5ESXhNREE0T1RFPSJ9fX0=
+filebeat:
+  dockerRootDir: /data/dockerimages
+files:
+  nfs: true

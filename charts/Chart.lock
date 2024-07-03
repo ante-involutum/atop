@@ -1,12 +1,12 @@
 dependencies:
 - name: files
-  repository: https://no8ge.github.io/chartrepo
-  version: 1.0.8
+  repository: oci://registry-1.docker.io/no8ge
+  version: 1.0.9
 - name: tink
-  repository: https://no8ge.github.io/chartrepo
+  repository: oci://registry-1.docker.io/no8ge
   version: 1.0.6
 - name: analysis
-  repository: https://no8ge.github.io/chartrepo
-  version: 1.0.2
-digest: sha256:a04c365aea6c18e125f6b1664d9ab676b849141d2536c8a4679c411aef756777
-generated: "2024-02-19T12:29:17.706694+08:00"
+  repository: oci://registry-1.docker.io/no8ge
+  version: 1.0.3
+digest: sha256:e032ea4a34f57845be9ab59ae2bb000e74d0f94cfa2068cbf83cffcd10de206e
+generated: "2024-07-03T17:07:08.616168+08:00"
