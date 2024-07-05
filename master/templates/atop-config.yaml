@@ -1,0 +1,15 @@
+# atop cnfig
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: atop-globe-config
+data:
+  host: "{{ .Values.hosts }}"
+  port: "{{ .Values.port }}"
+  version: "{{ .Chart.Version }}"
+  minio_host: "{{ .Release.Name }}-minio.{{ .Release.Namespace }}:9000"
+  minio_access_key: "{{ .Values.minio.accessKey }}"
+  minio_secret_key: "{{ .Values.minio.secretKey }}"
+  elasticsearch_service_hosts: "http://{{ .Release.Name }}-elasticsearch-master-headless.{{ .Release.Namespace }}:9200"
+  files_service_hosts: "{{ .Release.Name }}-files.{{ .Release.Namespace }}:8004"

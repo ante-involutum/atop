@@ -1,0 +1,7 @@
+filebeat:
+  dockerRootDir: /var/lib/docker
+  # dockerRootDir: /data/dockerimages
+minio_host: 172.16.60.10:30112
+minio_access_key: admin
+minio_secret_key: changeme
+elasticsearch_service_hosts: 172.16.60.10:31488

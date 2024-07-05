@@ -1,0 +1,6 @@
+dependencies:
+- name: core
+  repository: oci://registry-1.docker.io/no8ge
+  version: 1.0.0
+digest: sha256:a281c0191dae06f0ebcb6fcdc168d76a2e8319162e256e7aeb13ebae961f58d1
+generated: "2024-07-02T17:00:01.423018+08:00"
