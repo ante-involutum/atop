@@ -27,6 +27,11 @@ spec:
           op: Equal
           value: "{{ .Chart.AppVersion }}"          
       plugins:
+        - name: key-auth
+          enable: true
+          config:
+            key: admin
+            header: Authorization
         - name: proxy-rewrite
           enable: true
           config:
@@ -77,6 +82,11 @@ spec:
           op: Equal
           value: "{{ .Chart.AppVersion }}"          
       plugins:
+        - name: key-auth
+          enable: true
+          config:
+            key: admin
+            header: Authorization      
         - name: proxy-rewrite
           enable: true
           config:
@@ -127,6 +137,11 @@ spec:
           op: Equal
           value: "{{ .Chart.AppVersion }}"          
       plugins:
+        - name: key-auth
+          enable: true
+          config:
+            key: admin
+            header: Authorization      
         - name: proxy-rewrite
           enable: true
           config:
