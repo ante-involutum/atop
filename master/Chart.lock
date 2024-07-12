@@ -4,12 +4,12 @@ dependencies:
   version: 1.0.10
 - name: tink
   repository: oci://registry-1.docker.io/no8ge
-  version: 1.0.7
+  version: 1.0.8
 - name: analysis
   repository: oci://registry-1.docker.io/no8ge
   version: 1.0.4
 - name: core
   repository: oci://registry-1.docker.io/no8ge
   version: 1.0.0
-digest: sha256:7059cc1dc36a9a0bc823332871828c2e61a40c19a41cdce5bebaa40191ebfc4d
-generated: "2024-07-05T18:44:21.452975+08:00"
+digest: sha256:22d89df3aee9e6407f318682f8b369c4f8cec5be1ca40437afac020295217c1e
+generated: "2024-07-12T09:45:32.624407+08:00"
