@@ -25,7 +25,7 @@ appVersion: "1.0.10"
 
 dependencies:
   - name: files
-    version: "1.0.10"
+    version: "1.0.11"
     repository: "oci://registry-1.docker.io/no8ge"
   - name: tink
     version: "1.0.8"

@@ -1,7 +1,7 @@
 dependencies:
 - name: files
   repository: oci://registry-1.docker.io/no8ge
-  version: 1.0.10
+  version: 1.0.11
 - name: tink
   repository: oci://registry-1.docker.io/no8ge
   version: 1.0.8
@@ -11,5 +11,5 @@ dependencies:
 - name: core
   repository: oci://registry-1.docker.io/no8ge
   version: 1.0.0
-digest: sha256:22d89df3aee9e6407f318682f8b369c4f8cec5be1ca40437afac020295217c1e
-generated: "2024-07-12T09:45:32.624407+08:00"
+digest: sha256:e228b3fb5a6da194947692809330aa02be1724714222e866393d1d64620d9377
+generated: "2024-07-12T16:42:27.729623+08:00"
