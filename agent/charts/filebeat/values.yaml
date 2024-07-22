@@ -38,17 +38,6 @@ daemonset:
             matchers:
             - logs_path:
                 logs_path: "/var/log/containers/"
-        - script:
-            lang: javascript
-            source: >
-              function process(event) {
-                  var name = event.Get('kubernetes').pod.name;
-                  var container_name = event.Get('kubernetes').container.name;
-                  var labels_uid = event.Get('kubernetes').labels.uid;
-                  event.Put('pod.name',name);
-                  event.Put('container.name',container_name);
-                  event.Put('labels.uid',labels_uid);
-              }
 
       output.elasticsearch:
         enabled: true
