@@ -7,7 +7,7 @@ metadata:
 data:
   host: "{{ .Values.hosts }}"
   port: "{{ .Values.port }}"
-  version: "{{ .Chart.Version }}"
+  version: "{{ .Chart.AppVersion }}"
   minio_host: "{{ .Release.Name }}-minio.{{ .Release.Namespace }}:9000"
   minio_access_key: "{{ .Values.minio.accessKey }}"
   minio_secret_key: "{{ .Values.minio.secretKey }}"
